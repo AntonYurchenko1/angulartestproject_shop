@@ -13,7 +13,6 @@ export class ProductComponent implements OnInit {
   }
 
   onBuy(): void {
-    //alert('onBuy');
     console.log('buy event');
   }
 }
