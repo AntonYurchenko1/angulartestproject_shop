@@ -1,0 +1,21 @@
+<p><b>Cart:</b></p>
+<div *ngIf="products.length > 0; else notShow">
+        <div class="panel-body">
+            <ul>
+              <li *ngFor="let p of products">
+                <ul>
+                  <li>Name: {{p.name}}</li>
+                  <li>Description: {{p.description}}</li>
+                  <li>Price: {{p.price}}</li>
+                </ul>
+                <br>
+              </li>
+            </ul>
+        </div>
+</div>
+  
+<ng-template #notShow>
+    <p>
+      The cart is empty.
+    </p>
+</ng-template>
