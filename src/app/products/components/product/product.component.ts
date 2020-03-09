@@ -10,7 +10,13 @@ export class ProductComponent  {
   @Input()
   product: Product;
 
-  onBuy(): void {
-    console.log('buy event');
+  @Output()
+  addBasket: EventEmitter<Product> = new EventEmitter<Product>();
+
+  onAddBasket(): void {
+     if (this.product.isAvailable) {
+      console.log('add basket event ', this.product);
+      this.addBasket.emit(this.product);
+     }
   }
 }
