@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Product</div>
+  <div class="panel-body">
+  <table>
+    <tr>
+      <td>
+      <ul>
+        <li>Name: {{cartitemIn.product.name}}</li>
+        <li>Number: <input type="number" #quantField name="quant"  placeHolder="Number" (change)="onChangeQuant(quantField)"></li>
+        <li>Price: {{cartitemIn.price}}</li>
+      </ul>
+      </td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="onDelete();">Delete</button>
+      </td>
+    </tr>
+</table>
+</div>
+</div>
