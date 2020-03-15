@@ -11,3 +11,5 @@
 9. Add cart-list component
 10. Add cart item delete and quantaty change functionality
 11. With help of communcator service, pass information about adding of product to the cart between product-list and cart-list components
+
+12. Set #appTitle from the component class
