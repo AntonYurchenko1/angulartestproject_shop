@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CartItemComponent } from './../cart-item/cart-item.component';
 import { CartItem } from './../../models/cart-item.model';
 import { CartService } from './../../services/cart.service';
+import { CommunicatorService } from './../../../shared/services/communicator.service';
 
 
 @Component({
@@ -9,12 +11,21 @@ import { CartService } from './../../services/cart.service';
   templateUrl: './cart-list.component.html',
   styleUrls: ['./cart-list.component.css']
 })
-export class CartListComponent implements OnInit {
+export class CartListComponent implements OnInit, OnDestroy {
   cartitems: Array<CartItem>;
-  constructor(private cartService: CartService) { }
+  private subProduct: Subscription;
+
+  constructor(private cartService: CartService, private communicatorService: CommunicatorService) { }
 
   ngOnInit(): void {
     this.cartitems = this.cartService.getCartItems();
+    this.subProduct = this.communicatorService.channelProduct$.subscribe(
+      p => (this.cartService.pushProduct(this.cartitems, p))
+    );
+  }
+
+  ngOnDestroy() {
+    this.subProduct.unsubscribe();
   }
 
   onDelete(cartitem: CartItem): void {
@@ -25,5 +36,7 @@ export class CartListComponent implements OnInit {
       }
     }
   }
+
+
 
 }

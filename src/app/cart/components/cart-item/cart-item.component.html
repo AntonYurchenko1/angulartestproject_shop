@@ -6,7 +6,7 @@
       <td>
       <ul>
         <li>Name: {{cartitemIn.product.name}}</li>
-        <li>Number: <input type="number" #quantField name="quant"  placeHolder="Number" (change)="onChangeQuant(quantField)"></li>
+        <li>Number: <input type="number" #quantField name="quant"  placeHolder="Number" (change)="onChangeQuant(quantField)" value='{{cartitemIn.quant}}'></li>
         <li>Price: {{cartitemIn.price}}</li>
       </ul>
       </td>
