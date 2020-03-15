@@ -13,3 +13,4 @@
 11. With help of communcator service, pass information about adding of product to the cart between product-list and cart-list components
 
 12. Set #appTitle from the component class
+13. Add highlightItem direactive and highlight cart items

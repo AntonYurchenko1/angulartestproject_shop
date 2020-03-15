@@ -14,13 +14,15 @@ import { CartItem } from './../../models/cart-item.model';
   styleUrls: ['./cart-item.component.css']
 })
 export class CartItemComponent implements AfterViewInit {
+  constructor() { }
+
+  itemColor = 'yellow';
+
   @Input()
   cartitemIn: CartItem;
 
   @ViewChild('quantField')
   quantInputField: ElementRef<HTMLInputElement>;
-
-  constructor() { }
 
   @Output()
   deleteCartItem: EventEmitter<CartItem> = new EventEmitter<CartItem>();
