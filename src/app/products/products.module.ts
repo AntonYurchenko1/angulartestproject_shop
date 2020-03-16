@@ -13,7 +13,7 @@ import {ProductsService} from './services/products.service';
   imports: [
     CommonModule
   ],
-  providers: [ProductsService],
+  // providers: [ProductsService], // сервис уже зарегистрирован через свой декоратор
   exports: [
     ProductListComponent
   ]
