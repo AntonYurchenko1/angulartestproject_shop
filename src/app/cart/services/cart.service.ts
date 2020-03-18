@@ -25,6 +25,7 @@ export class CartService {
     return cartItems;
   }
 
+  // может быть лучше этот массив хранить тут в сервисе
   pushProduct(cartItems: Array<CartItem>, product: Product): Array<CartItem> {
     let exist = false;
     cartItems.forEach(item => {
