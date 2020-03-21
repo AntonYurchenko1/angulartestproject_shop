@@ -6,8 +6,19 @@ import { CartItem } from './../models/cart-item.model';
   providedIn: 'root'
 })
 export class CartService {
+  cartItems: Array<CartItem>;
 
   constructor() { }
+
+  deleteCartItem(cartitem: CartItem): void {
+    for ( let i = 0; i < this.cartItems.length; i++) {
+      if ( this.cartItems[i].product.name === cartitem.product.name) {
+        this.cartItems.splice(i, 1);
+        i--;
+      }
+    }
+  }
+
   getPurchasedProducts(): Array<Product> {
     return [
       new Product('Refrigerator1', 'NoFrost', 10000, true) ,
@@ -16,18 +27,23 @@ export class CartService {
     ];
   }
 
-  getCartItems(): Array<CartItem> {
+  initCartItems(): Array<CartItem> {
     const products = this.getPurchasedProducts();
-    const cartItems = new Array<CartItem>();
+    this.cartItems = new Array<CartItem>();
+
     products.forEach(element => {
-      this.pushProduct(cartItems, element);
+      this.pushProduct(element);
     });
-    return cartItems;
+    return this.cartItems;
   }
 
-  pushProduct(cartItems: Array<CartItem>, product: Product): Array<CartItem> {
+  getCartItems(): Array<CartItem> {
+    return this.cartItems;
+  }
+
+  pushProduct(product: Product): Array<CartItem> {
     let exist = false;
-    cartItems.forEach(item => {
+    this.cartItems.forEach(item => {
       if (item.product.name ===  product.name) {
         item.price += product.price;
         item.quant += 1;
@@ -35,8 +51,8 @@ export class CartService {
       }
     });
     if (!exist) {
-      cartItems.push(new CartItem(product, product.price, 1));
+      this.cartItems.push(new CartItem(product, product.price, 1));
     }
-    return cartItems;
+    return this.cartItems;
   }
 }

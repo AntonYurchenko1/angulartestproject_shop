@@ -1,6 +1,6 @@
 <p><b>Products in cart:</b></p>
 <app-cart-item
-   *ngFor="let cartitem of cartitems"
+   *ngFor="let cartitem of this.cartService.getCartItems()"
     [cartitemIn]="cartitem"
     (deleteCartItem)="onDelete($event)">
 </app-cart-item>

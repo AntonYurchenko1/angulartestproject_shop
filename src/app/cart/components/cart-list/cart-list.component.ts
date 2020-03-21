@@ -12,16 +12,15 @@ import { CommunicatorService } from './../../../shared/services/communicator.ser
   styleUrls: ['./cart-list.component.css']
 })
 export class CartListComponent implements OnInit, OnDestroy {
-  cartitems: Array<CartItem>;
   private subProduct: Subscription;
 
-  constructor(private cartService: CartService, private communicatorService: CommunicatorService) { }
+  constructor(public cartService: CartService, private communicatorService: CommunicatorService) { }
 
   ngOnInit(): void {
-    this.cartitems = this.cartService.getCartItems();
     this.subProduct = this.communicatorService.channelProduct$.subscribe(
-      p => (this.cartService.pushProduct(this.cartitems, p))
+      p => (this.cartService.pushProduct(p))
     );
+    this.cartService.initCartItems();
   }
 
   ngOnDestroy() {
@@ -29,12 +28,7 @@ export class CartListComponent implements OnInit, OnDestroy {
   }
 
   onDelete(cartitem: CartItem): void {
-    for ( let i = 0; i < this.cartitems.length; i++) {
-      if ( this.cartitems[i].product.name === cartitem.product.name) {
-        this.cartitems.splice(i, 1);
-        i--;
-      }
-    }
+    this.cartService.deleteCartItem(cartitem);
   }
 
 
