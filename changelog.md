@@ -14,3 +14,8 @@
 
 12. Set #appTitle from the component class
 13. Add highlightItem direactive and highlight cart items
+14. According pullRequest advice, refactor cartService to keep cartItems inside itself.
+
+// Services and DI
+15. Update cart service with new methods.
+
