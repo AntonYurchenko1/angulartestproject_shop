@@ -18,4 +18,9 @@
 
 // Services and DI
 15. Update cart service with new methods.
+16. Add LocalStorage service
+17. Add CofigOptions service
+18. Add Constant service
+19. Add generator service and generator factory function
+20. Add About component and inject all required services into it.
 

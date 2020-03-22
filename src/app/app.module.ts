@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { FirstComponent } from './first/components/first/first.component';
 
 import { CartComponent } from './cart/components/cart/cart.component';
+import { AboutComponent } from './layout/components/about/about.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
-    CartComponent
+    CartComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
