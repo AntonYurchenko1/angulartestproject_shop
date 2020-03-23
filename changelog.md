@@ -14,7 +14,7 @@
 
 12. Set #appTitle from the component class
 13. Add highlightItem direactive and highlight cart items
-14. According pullRequest advice, refactor cartService to keep cartItems inside itself.
+14. According pullRequest advice, refactor cartService to keep cartItems inside itself
 
 // Services and DI
 15. Update cart service with new methods.
@@ -22,5 +22,7 @@
 17. Add CofigOptions service
 18. Add Constant service
 19. Add generator service and generator factory function
-20. Add About component and inject all required services into it.
+20. Add About component and inject all required services into it
+21. Add ClickItem directive to shared module, apply it to About component
+
 

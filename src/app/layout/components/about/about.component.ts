@@ -1,6 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Optional, HostListener } from '@angular/core';
 import { ConfigOptionsService, ConstantService, constantServInst, LocalStorageService } from '../../../core/services';
 import { GeneratorService, RandomStringNFactory, RandomString32 } from '../../../core/services';
+
 
 @Component({
   selector: 'app-about',
@@ -19,11 +20,15 @@ export class AboutComponent implements OnInit {
   constructor(
     @Inject(RandomString32) private randomString32: string,
     private constant: ConstantService,
-    private storage: LocalStorageService,
+    @Optional() private storage: LocalStorageService,
     private options: ConfigOptionsService
   ) { }
 
+  testDblClick: boolean;
+
+
   ngOnInit(): void {
+    this.testDblClick = true;
   }
 
 }
