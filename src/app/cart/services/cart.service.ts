@@ -113,7 +113,7 @@ export class CartService {
   totalSum(): number {
     let sum = 0;
     this.cartItems.forEach(item => {
-      sum += item.price;
+      sum += item.price; // не очевидно, что это сумма
     });
     return sum;
   }
