@@ -6,7 +6,8 @@ export class ConfigOptionsService {
   options: ConfigOptions;
   constructor() { }
   setOptions(options: ConfigOptions) {
-    this.options = options;
+    this.options = options; // это будет перезапись, желательно добавлять
+    // свойства так, чтобы существующие перезаписывались, новые добавлялись, не измененные оставались
   }
 
   getOptions(): ConfigOptions {

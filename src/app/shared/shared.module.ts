@@ -4,15 +4,13 @@ import { HighlightItemDirective } from './directives/highlight-item.directive';
 import { ClickItemDirective } from './directives/click-item.directive';
 
 
+const dirs = [HighlightItemDirective, ClickItemDirective];
 
 @NgModule({
-  declarations: [HighlightItemDirective, ClickItemDirective],
   imports: [
     CommonModule
   ],
-  exports: [
-    HighlightItemDirective,
-    ClickItemDirective
-  ]
+  declarations: [...dirs],
+  exports: [...dirs]
 })
 export class SharedModule { }
