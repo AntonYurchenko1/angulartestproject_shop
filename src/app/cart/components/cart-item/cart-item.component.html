@@ -5,9 +5,10 @@
     <tr>
       <td>
       <ul>
-        <li>Name: {{cartitemIn.product.name}}</li>
+        <li>Name: {{cartitemIn.product.name | uppercase}}</li>
         <li>Number: <input type="number" #quantField name="quant"  placeHolder="Number" (change)="onChangeQuant(quantField)" value='{{cartitemIn.quant}}'></li>
-        <li>Price: {{cartitemIn.price}}</li>
+        <li>Price: {{cartitemIn.price | currency:'USD':'symbol-narrow':'4.2-2'}}</li>
+        <li>Updated: {{cartitemIn.updateDate | date:'medium'}}</li>
       </ul>
       </td>
       <td>

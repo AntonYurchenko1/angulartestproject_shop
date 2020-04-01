@@ -25,4 +25,7 @@
 20. Add About component and inject all required services into it
 21. Add ClickItem directive to shared module, apply it to About component
 
+//Pipes
+22. Add built-in Pipes for Date, Price and Name for cart-item
+
 

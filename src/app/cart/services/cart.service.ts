@@ -49,11 +49,12 @@ export class CartService {
       if (item.product.name ===  product.name) {
         item.price += product.price;
         item.quant += 1;
+        item.updateDate = Date.now();
         exist = true;
       }
     });
     if (!exist) {
-      this.cartItems.push(new CartItem(product, product.price, 1));
+      this.cartItems.push(new CartItem(product, product.price, 1, Date.now()));
     }
     this.updateCartData();
   }

@@ -43,6 +43,7 @@ export class CartItemComponent implements AfterViewInit {
       this.quantInputField.nativeElement.value = this.cartitemIn.quant.toString();
     }
     this.cartitemIn.price = this.cartitemIn.product.price * this.cartitemIn.quant;
+    this.cartitemIn.updateDate = Date.now();
     console.log('change number of products in cart item to ', this.cartitemIn.quant);
   }
 
