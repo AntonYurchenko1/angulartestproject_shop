@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from './../../models/product.model';
 import { ProductsService } from './../../services/products.service';
 import { CommunicatorService } from './../../../shared/services/communicator.service';
+import { Observable, Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -9,15 +10,17 @@ import { CommunicatorService } from './../../../shared/services/communicator.ser
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Array<Product>;
-  productsInBasket: Array<Product>;
+  products: Observable<Array<Product>>;
+  products2: Promise<Array<Product>>;
+  productsInBasket: Array<Product> = new Array<Product>();
   constructor(private productService: ProductsService, private communicatorService: CommunicatorService) { }
 
   ngOnInit(): void {
     this.products = this.productService.getProducts();
+    this.products2 = this.productService.getProducts2();
     console.log('get products');
     console.log(this.products[0].name);
-    this.productsInBasket = new Array<Product>(); // наверное, это не самый лучший варант тут создавать корзину
+    // this.productsInBasket = new Array<Product>(); // наверное, это не самый лучший варант тут создавать корзину
   }
 
   onAddBasket(product: Product): void {
