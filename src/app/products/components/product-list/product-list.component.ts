@@ -19,7 +19,6 @@ export class ProductListComponent implements OnInit {
     this.products = this.productService.getProducts();
     this.products2 = this.productService.getProducts2();
     console.log('get products');
-    console.log(this.products[0].name);
     // this.productsInBasket = new Array<Product>(); // наверное, это не самый лучший варант тут создавать корзину
   }
 

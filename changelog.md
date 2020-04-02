@@ -29,5 +29,6 @@
 22. Add built-in Pipes for Date, Price and Name for cart-item
 23. Change getProducts() in Product Service to return Observable,
 add getProducts2 ro return Promise, use AsyncPipe to display result at product-list component
+24. Add OrderBy Pipe in shared module, sort cart items by price
 
 

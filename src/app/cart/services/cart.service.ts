@@ -56,6 +56,7 @@ export class CartService {
     if (!exist) {
       this.cartItems.push(new CartItem(product, product.price, 1, Date.now()));
     }
+
     this.updateCartData();
   }
 
