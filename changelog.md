@@ -31,5 +31,5 @@
 add getProducts2 ro return Promise, use AsyncPipe to display result at product-list component
 24. Add OrderBy Pipe in shared module, sort cart items by price
 25. Add possibility to choose 'sorting by' property 
-
+26. use SharedModule to import CommonModule and FormsModule 
 
