@@ -13,6 +13,17 @@ import { CommunicatorService } from './../../../shared/services/communicator.ser
 })
 export class CartListComponent implements OnInit, OnDestroy {
   private subProduct: Subscription;
+  sortField = 'price';
+  sortItems = [{
+    id: 'price',
+    label: 'Price',
+  }, {
+    id: 'quant',
+    label: 'Quantity',
+  }, {
+    id: 'name',
+    label: 'Product name',
+  }];
 
   constructor(public cartService: CartService, private communicatorService: CommunicatorService) { }
 
@@ -31,6 +42,8 @@ export class CartListComponent implements OnInit, OnDestroy {
     this.cartService.deleteCartItem(cartitem);
   }
 
-
+  onSortChange(sortValue) {
+    this.sortField = sortValue;
+  }
 
 }

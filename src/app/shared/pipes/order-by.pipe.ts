@@ -13,11 +13,11 @@ export class OrderByPipe implements PipeTransform {
 
     if (desc) {
       sortArr.sort((a, b) => {
-       return b[field] - a[field];
+       return b[field] > a[field] ? 1 : -1;
       });
     } else {
       sortArr.sort((a, b) => {
-        return a[field] - b[field];
+        return a[field] > b[field] ? 1 : -1;
       });
     }
 

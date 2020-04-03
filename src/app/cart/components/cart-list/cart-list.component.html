@@ -1,6 +1,10 @@
 <p><b>Products in cart:</b></p>
+    Sort cart items by:
+    <select (change)="onSortChange($event.target.value)">
+      <option *ngFor="let sitem of sortItems" [value]="sitem.id">{{sitem.label}}</option>
+    </select>
 <app-cart-item
-   *ngFor="let cartitem of this.cartService.getCartItems() | orderBy: 'price': false "
+   *ngFor="let cartitem of this.cartService.getCartItems() | orderBy: sortField : false "
     [cartitemIn]="cartitem"
     (deleteCartItem)="onDelete($event)">
 </app-cart-item>
