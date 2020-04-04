@@ -25,11 +25,13 @@
 20. Add About component and inject all required services into it
 21. Add ClickItem directive to shared module, apply it to About component
 
-//Pipes
+// Pipes (Pipes for Date, Price and Name are added to cart-item component 
+// OrderBy Pipe is in shared module and is used at cart-list component)
 22. Add built-in Pipes for Date, Price and Name for cart-item
 23. Change getProducts() in Product Service to return Observable,
 add getProducts2 ro return Promise, use AsyncPipe to display result at product-list component
 24. Add OrderBy Pipe in shared module, sort cart items by price
 25. Add possibility to choose 'sorting by' property 
 26. use SharedModule to import CommonModule and FormsModule 
+
 
