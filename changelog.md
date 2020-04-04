@@ -34,4 +34,7 @@ add getProducts2 ro return Promise, use AsyncPipe to display result at product-l
 25. Add possibility to choose 'sorting by' property 
 26. use SharedModule to import CommonModule and FormsModule 
 
+// Routing
+27. Add bootstrap, update layout
+
 

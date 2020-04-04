@@ -10,15 +10,15 @@ import { AppComponent } from './app.component';
 import { FirstComponent } from './first/components/first/first.component';
 
 import { CartComponent } from './cart/components/cart/cart.component';
-import { AboutComponent } from './layout/components/about/about.component';
+import { LayoutModule } from './layout/layout.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
-    CartComponent,
-    AboutComponent
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +27,8 @@ import { AboutComponent } from './layout/components/about/about.component';
     CartModule,
     ProductsModule,
     OrdersModule,
-    SharedModule
+    SharedModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

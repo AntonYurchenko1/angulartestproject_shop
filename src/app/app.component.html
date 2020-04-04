@@ -6,25 +6,16 @@
 <div style="text-align:center">
   <app-about></app-about>
 </div>
-<table>
-<tr>
-<td><app-first></app-first></td>
-</tr>
-<tr>
-  <td>
-    <app-product-list></app-product-list>
-  </td>
-  <td></td>
-  <td></td>
-  <td><app-cart></app-cart></td>
-  <td></td>
-  <td></td>
-  <td><app-cart-list></app-cart-list></td>
-</tr>
-
-</table>
-
-
-
+<div class="container">
+  <div class="row align-items-start">
+    <div class="col-md-5">
+       <app-product-list></app-product-list>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-5">
+       <app-cart-list></app-cart-list>
+    </div>
+  </div>
+</div>
 
 <router-outlet></router-outlet>
