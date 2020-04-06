@@ -18,4 +18,14 @@
   </div>
 </div>
 
-<router-outlet></router-outlet>
+<div class="container">
+
+  <!-- #routerOutlet="outlet" - access to the properties of router-outlet directive -->
+  <router-outlet
+    #routerOutlet="outlet"
+    (activate)='onActivate($event, routerOutlet)'
+    (deactivate)='onDeactivate($event, routerOutlet)'>
+  </router-outlet>
+  <!-- Routed views go here -->
+
+</div>
