@@ -5,16 +5,12 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
-    path: 'app',
-    component: AppComponent
-  },
-  {
     path: 'about',
     component: AboutComponent
   },
   {
     path: '',
-    redirectTo: '/app',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {

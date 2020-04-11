@@ -36,5 +36,6 @@ add getProducts2 ro return Promise, use AsyncPipe to display result at product-l
 
 // Routing
 27. Add bootstrap, update layout
+28. Add Products and Cart feature routing. Add product-form component.
 
 

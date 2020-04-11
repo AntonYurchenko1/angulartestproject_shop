@@ -2,6 +2,14 @@ import { Injectable } from '@angular/core';
 import { Product } from './../models/product.model';
 import {Observable, Subscriber } from 'rxjs';
 
+const productList = [
+  new Product(1, 'Refrigerator1', 'NoFrost', 10000, true),
+  new Product(2, 'Refrigerator2', 'Frost', 15000, true),
+  new Product(3, 'Refrigerator3', 'NoFrost', 15000, false)
+];
+
+const productListPromise = Promise.resolve(productList);
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,24 +20,52 @@ export class ProductsService {
   getProducts(): Observable<Array<Product>> {
     return new Observable<Array<Product>>((observer: Subscriber<Array<Product>>) => {
       observer.next([
-        new Product('Refrigerator1', 'NoFrost', 10000, true),
-        new Product('Refrigerator2', 'Frost', 15000, true),
-        new Product('Refrigerator3', 'NoFrost', 15000, false)
+        new Product(1, 'Refrigerator1', 'NoFrost', 10000, true),
+        new Product(2, 'Refrigerator2', 'Frost', 15000, true),
+        new Product(3, 'Refrigerator3', 'NoFrost', 15000, false)
       ]);
     });
   }
 
   getProducts2(): Promise<Array<Product>> {
-    return new Promise<Array<Product>>((resolve, reject) => {
+    /*return new Promise<Array<Product>>((resolve, reject) => {
       setTimeout(() => {
         resolve ([
-          new Product('Refrigerator1', 'NoFrost', 10000, true),
-          new Product('Refrigerator2', 'Frost', 15000, true),
-          new Product('Refrigerator3', 'NoFrost', 15000, false)
+          new Product(1, 'Refrigerator1', 'NoFrost', 10000, true),
+          new Product(2, 'Refrigerator2', 'Frost', 15000, true),
+          new Product(3, 'Refrigerator3', 'NoFrost', 15000, false)
         ]);
         // reject('Error');
       }, 15000);
     }).catch(error => error) as Promise<Array<Product>>;
+    */
+    return productListPromise;
+  }
+
+  getProduct(id: number | string): Promise<Product> {
+    return this.getProducts2()
+      .then(products => products.find(product => product.id === +id))
+      .catch(() => Promise.reject('Error in getProduct method'));
+  }
+
+  createProduct(product: Product): void {
+    productList.push(product);
+  }
+
+  updateProduct(product: Product): void {
+    const i = productList.findIndex(t => t.id === product.id);
+
+    if (i > -1) {
+      productList.splice(i, 1, product);
+    }
+  }
+
+  deleteProduct(product: Product): void {
+    const i = productList.findIndex(t => t.id === product.id);
+
+    if (i > -1) {
+      productList.splice(i, 1);
+    }
   }
 
 }

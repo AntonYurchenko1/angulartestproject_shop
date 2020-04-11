@@ -23,10 +23,10 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     CartModule,
     ProductsModule,
     OrdersModule,
-    SharedModule,
     LayoutModule,
     AppRoutingModule
   ],

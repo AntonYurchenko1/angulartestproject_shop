@@ -12,11 +12,18 @@ export class ProductComponent  {
 
   @Output()
   addBasket: EventEmitter<Product> = new EventEmitter<Product>();
+  @Output()
+  editProduct: EventEmitter<Product> = new EventEmitter<Product>();
 
   onAddBasket(): void {
      if (this.product.isAvailable) {
       console.log('add basket event ', this.product);
       this.addBasket.emit(this.product);
      }
+  }
+
+  onEditProduct() {
+    console.log('edit product event ', this.product);
+    this.editProduct.emit(this.product);
   }
 }

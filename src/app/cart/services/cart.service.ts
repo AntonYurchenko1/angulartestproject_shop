@@ -14,9 +14,9 @@ export class CartService {
 
   getPurchasedProducts(): Array<Product> {
     return [
-      new Product('Refrigerator1', 'NoFrost', 10000, true) ,
-      new Product('Refrigerator1', 'NoFrost', 10000, true) ,
-      new Product('Refrigerator2', 'Frost', 15000, true)
+      new Product(1, 'Refrigerator1', 'NoFrost', 10000, true) ,
+      new Product(2, 'Refrigerator1', 'NoFrost', 10000, true) ,
+      new Product(3, 'Refrigerator2', 'Frost', 15000, true)
     ];
   }
 
