@@ -4,6 +4,7 @@ import { CartItemComponent } from './../cart-item/cart-item.component';
 import { CartItem } from './../../models/cart-item.model';
 import { CartService } from './../../services/cart.service';
 import { CommunicatorService } from './../../../shared/services/communicator.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,9 +26,13 @@ export class CartListComponent implements OnInit, OnDestroy {
     label: 'Product name',
   }];
 
-  constructor(public cartService: CartService, private communicatorService: CommunicatorService) { }
+  constructor(
+    public cartService: CartService,
+    private communicatorService: CommunicatorService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    console.log('CartListComponent ngOnInit ');
     this.subProduct = this.communicatorService.channelProduct$.subscribe(
       p => (this.cartService.pushProduct(p))
     );
@@ -45,5 +50,11 @@ export class CartListComponent implements OnInit, OnDestroy {
   onSortChange(sortValue) {
     this.sortField = sortValue;
   }
+
+  onClose() {
+    this.router.navigate([{ outlets: { cart: null } }]);
+    this.cartService.isDisplayed = false;
+  }
+
 
 }

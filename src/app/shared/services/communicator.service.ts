@@ -11,6 +11,7 @@ export class CommunicatorService {
   public channelProduct$ = this.channelProduct.asObservable();
 
   publishProduct(p: Product) {
+    console.log('CommunicatorService publishProduct');
     this.channelProduct.next(p);
   }
 }

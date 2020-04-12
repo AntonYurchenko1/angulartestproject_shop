@@ -9,6 +9,7 @@ export class CartService {
   cartItems: Array<CartItem>;
   totalQuant: number;
   totalPrice: number;
+  isDisplayed = false;
 
   constructor() { }
 
@@ -21,12 +22,15 @@ export class CartService {
   }
 
   initCartItems(): Array<CartItem> {
-    const products = this.getPurchasedProducts();
-    this.cartItems = new Array<CartItem>();
+    if (!this.cartItems) {
+      console.log('Init cart items');
+      const products = this.getPurchasedProducts();
+      this.cartItems = new Array<CartItem>();
 
-    products.forEach(element => {
-      this.pushProduct(element);
-    });
+      products.forEach(element => {
+        this.pushProduct(element);
+      });
+    }
     return this.cartItems;
   }
 
@@ -56,6 +60,8 @@ export class CartService {
     if (!exist) {
       this.cartItems.push(new CartItem(product, product.price, 1, Date.now(), product.name));
     }
+
+    console.log('cartService pushProduct');
 
     this.updateCartData();
   }

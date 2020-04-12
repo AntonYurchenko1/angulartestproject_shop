@@ -6,6 +6,7 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartListComponent,
+    outlet: 'cart'
   }
 ];
 
