@@ -38,5 +38,7 @@ add getProducts2 ro return Promise, use AsyncPipe to display result at product-l
 27. Add bootstrap, update layout
 28. Add Products and Cart feature routing. Add product-form component.
 29. Add admin and login page draft, add Auth, Deactivate guards
+30. Add manage-products, manage-product and manage-product-form component.
+Add Resolve and Deactivate guards on manage-product-form 
 
 

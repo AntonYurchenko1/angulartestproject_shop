@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from './../models/product.model';
-import {Observable, Subscriber } from 'rxjs';
+import { Observable, Subscriber, of, throwError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 const productList = [
   new Product(1, 'Refrigerator1', 'NoFrost', 10000, true),
@@ -42,10 +43,18 @@ export class ProductsService {
     return productListPromise;
   }
 
-  getProduct(id: number | string): Promise<Product> {
+  getProduct2(id: number | string): Promise<Product> {
     return this.getProducts2()
       .then(products => products.find(product => product.id === +id))
       .catch(() => Promise.reject('Error in getProduct method'));
+  }
+
+  getProduct(id: number | string): Observable<Product> {
+    return this.getProducts()
+      .pipe(
+        map((products: Array<Product>) => products.find(p => p.id === +id)),
+        catchError(err => throwError('Error in getProduct2 method'))
+      );
   }
 
   createProduct(product: Product): void {

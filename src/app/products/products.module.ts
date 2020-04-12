@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 
 import { ProductsRoutingModule } from './products-routing.module';
-import { ProductComponent, ProductListComponent, ProductFormComponent} from './components';
+import { ProductListComponent, ProductComponent, ProductFormComponent } from './components';
 import {ProductsService} from './services/products.service';
 
 @NgModule({
   declarations: [
-    ProductComponent,
     ProductListComponent,
+    ProductComponent,
     ProductFormComponent
   ],
   imports: [

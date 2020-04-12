@@ -1,1 +1,6 @@
-<p>manage-products works!</p>
+<p><b>Products:</b></p>
+<app-manage-product
+   *ngFor="let product of products2 | async"
+    [product]="product"
+    (editProduct)="onEditProduct($event)">
+</app-manage-product>
