@@ -1,12 +1,12 @@
-<p><b>Products (Observable):</b></p>
+<!--p><b>Products (Observable):</b></p>
 <app-product
    *ngFor="let product of products | async"
     [product]="product"
     (addBasket)="onAddBasket($event)"
     (editProduct)="onEditProduct($event)">
-</app-product>
+</app-product-->
 
-<p><b>Products (Promise):</b></p>
+<p><b>Products:</b></p>
 <app-product
    *ngFor="let product of products2 | async"
     [product]="product"
