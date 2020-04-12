@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AboutComponent, PathNotFoundComponent } from './layout';
+import { AboutComponent, PathNotFoundComponent, LoginComponent } from './layout';
 import { CartListComponent } from './cart';
 import { AppComponent } from './app.component';
 
@@ -8,6 +8,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+      path: 'login',
+      component: LoginComponent
   },
   {
     path: '',

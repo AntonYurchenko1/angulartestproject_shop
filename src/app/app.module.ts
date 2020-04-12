@@ -14,6 +14,7 @@ import { CartComponent } from './cart/components/cart/cart.component';
 import { LayoutModule } from './layout/layout.module';
 
 import { AppRoutingModule } from './app-routing.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AppRoutingModule } from './app-routing.module';
     ProductsModule,
     OrdersModule,
     LayoutModule,
+    AdminModule,
     AppRoutingModule
   ],
   providers: [],
