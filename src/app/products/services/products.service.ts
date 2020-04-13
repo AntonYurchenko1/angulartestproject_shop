@@ -20,11 +20,7 @@ export class ProductsService {
 
   getProducts(): Observable<Array<Product>> {
     return new Observable<Array<Product>>((observer: Subscriber<Array<Product>>) => {
-      observer.next([
-        new Product(1, 'Refrigerator1', 'NoFrost', 10000, true),
-        new Product(2, 'Refrigerator2', 'Frost', 15000, true),
-        new Product(3, 'Refrigerator3', 'NoFrost', 15000, false)
-      ]);
+      observer.next(productList);
     });
   }
 
