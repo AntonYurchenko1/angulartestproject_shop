@@ -31,6 +31,7 @@ export class ProductListComponent implements OnInit {
     console.log('products count in basket ', this.productsInBasket.length);
   }
 
+  // Лучше не использовать однобуквенные параметры, тяжело читать будет потом, со временем
   onEditProduct(p: Product): void {
     const link = ['/edit', p.id];
     console.log('router navigat /edit', p.id);
