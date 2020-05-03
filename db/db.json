@@ -1,0 +1,14 @@
+{
+  "products": [
+        { "id": 1, "name": "Refrigirator1", "description": "NoFrost", "price": 10000, "isAvailable": true},
+        { "id": 2, "name": "Refrigirator2", "description": "NoFrost", "price": 12000, "isAvailable": true},
+        { "id": 3, "name": "Refrigirator3", "description": "NoFrost", "price": 13000, "isAvailable": true},
+        { "id": 4, "name": "Refrigirator4", "description": "NoFrost", "price": 14000, "isAvailable": true},
+        { "id": 5, "name": "Refrigirator5", "description": "NoFrost", "price": 15000, "isAvailable": true},
+        { "id": 6, "name": "Refrigirator6", "description": "NoFrost", "price": 16000, "isAvailable": false}
+    ],
+  "cartitems": [
+      { "id": 1, "orderId": 1, "productId": 1, "quant": 1, "updateDate": 1000},
+      { "id": 2, "orderId": 1, "productId": 1, "quant": 1, "updateDate": 1000}
+  ]
+}

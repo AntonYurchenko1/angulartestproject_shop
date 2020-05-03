@@ -41,4 +41,7 @@ add getProducts2 ro return Promise, use AsyncPipe to display result at product-l
 30. Add manage-products, manage-product and manage-product-form component.
 Add Resolve and Deactivate guards on manage-product-form 
 
+// httpClient
+31. Add json server and db.json
+
 

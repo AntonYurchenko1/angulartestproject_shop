@@ -58,7 +58,7 @@ export class CartService {
       }
     });
     if (!exist) {
-      this.cartItems.push(new CartItem(product, product.price, 1, Date.now(), product.name));
+      this.cartItems.push(new CartItem(1, 1, product, product.price, 1, Date.now(), product.name));
     }
 
     console.log('cartService pushProduct');
